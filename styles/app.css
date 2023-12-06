@@ -1194,9 +1194,6 @@ textarea{
         align-items: center;
         padding-top: 2rem;
     }
-    .home .row{
-        flex-direction: column-reverse;
-    }
     .home__img{
         width: 22rem;
         height: 22rem;
@@ -1204,6 +1201,15 @@ textarea{
     }
     .head-section{
         padding-top: 4rem;
+    }
+    .about__wrapper{
+        flex-direction: column;
+    }
+    .services__wrapper{
+        gap: 1.5rem;
+    }
+    .service__title {
+        font-size: 1.4rem;
     }
     .resume__wrapper{
         flex-direction: column;
@@ -1241,19 +1247,10 @@ textarea{
     .resume__list__svg{
         display: none;
     }
-    .services__wrapper{
-        gap: 1.5rem;
-    }
-    .service__title {
-        font-size: 1.4rem;
-    }
     .resume__content__head__title {
         font-size: 1.1rem;
     }
-    .about__wrapper{
-        flex-direction: column;
-    }
-    .brick{
+    .break{
         display: inline-block;
     }
     .footer__links {
@@ -1366,15 +1363,15 @@ textarea{
         height: 18.5rem;
         border: 0.5rem solid var(--secondary-bg-color);
     }
+    .home__links{
+        gap: 1rem;
+    }
     .btn{
         width: 8rem;
         height: 3rem;
     }
     .head-section{
         padding-top: 1.5rem;
-    }
-    .home__links{
-        gap: 1rem;
     }
     .about__content{
         padding: 1rem;
@@ -1401,15 +1398,15 @@ textarea{
     .package__head {
         width: 18rem;
     }
+    .package__body__list {
+        padding-left: 5rem;
+    }
     .pricing{
         margin-top: 3rem;
         padding-bottom: 3rem;
     }
     .pricing__wrapper {
         gap: 2rem;
-    }
-    .package__body__list {
-        padding-left: 5rem;
     }
     .contact__form__input{
         width: 80%;
