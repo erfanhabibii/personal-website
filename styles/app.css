@@ -1041,6 +1041,9 @@ textarea{
     .resume__list__svg{
         display: none;
     }
+    .services__wrapper{
+        gap: 1.5rem;
+    }
     .service__title {
         font-size: 1.4rem;
     }
@@ -1049,9 +1052,6 @@ textarea{
     }
     .about__wrapper{
         flex-direction: column;
-    }
-    .services__wrapper{
-        gap: 2rem;
     }
     .brick{
         display: inline-block;
