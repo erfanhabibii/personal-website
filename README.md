@@ -20,5 +20,5 @@ To switch from `light mode` to `dark mode`, you can use the button designed in t
 
 <br/>
 
-## Licens
+## License
 [MIT](LICENSE)
