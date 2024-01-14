@@ -1,7 +1,7 @@
 // select Variable and Element
 const navToggleIcon = document.querySelector(".nav__toggle");
 const navMenu = document.querySelector(".nav__menu");
-const cover = document.querySelector(".cover");
+const overlay = document.querySelector(".overlay");
 const ResumeList = document.querySelectorAll(".resume__list");
 const portdolioList = document.querySelectorAll(".portfolio__list");
 const menuItem = document.querySelectorAll(".nav__menu-item");
@@ -32,7 +32,7 @@ function observerHandler(allSection){
 }
 
 // Custom Functions
-function navigationTabs(listItems, listItemsActiveClass, contentItemShowClass) {
+navigationTabs = (listItems, listItemsActiveClass, contentItemShowClass) => {
     listItems.forEach(listItem => {
         listItem.addEventListener('click', function () {
             removeActiveClass(listItemsActiveClass)
@@ -43,15 +43,14 @@ function navigationTabs(listItems, listItemsActiveClass, contentItemShowClass) {
         })
     });
 }
-function removeActiveClass(className){
+removeActiveClass = (className) => {
     document.querySelector(`.${className}`).classList.remove(className)
 }
-function navigationTheme(listItems, listItemsActiveClass, contentItemShowClass) {
+navigationTheme = (listItems, listItemsActiveClass) => {
     listItems.forEach(listItem => {
         listItem.addEventListener('click', function () {
             removeActiveClass(listItemsActiveClass)
             this.classList.add(listItemsActiveClass)
-            document.documentElement.classList.toggle(contentItemShowClass)
         })
     });
 }
@@ -59,19 +58,34 @@ function navigationTheme(listItems, listItemsActiveClass, contentItemShowClass) 
 // App Navigation Setting
 navigationTabs(ResumeList, "resume__list--active", "resume__contents--show")
 navigationTabs(portdolioList, "portfolio__list--active", "swiper--show")
-navigationTheme(changeActive, "dark-light__svg--active", "dark-theme")
+navigationTheme(changeActive, "dark-light__svg--active")
 
 // Event Listeners
 navToggleIcon.addEventListener('click', function(){
     this.classList.toggle('nav__toggle--open')
     navMenu.classList.toggle('nav__menu--open')
-    cover.classList.toggle('cover--show')
+    overlay.classList.toggle('overlay--visible')
 })
-changeTheme.addEventListener("click", function(){
-    if (document.documentElement.classList.contains("dark-theme")){
+overlay.addEventListener("click", function(){
+    navToggleIcon.classList.remove('nav__toggle--open')
+    navMenu.classList.remove('nav__menu--open')
+    overlay.classList.remove('overlay--visible')
+
+})
+changeTheme.addEventListener("click", function(e) {
+    console.log(e.target.parentElement.classList.contains("mon"));
+    if (e.target.parentElement.classList.contains("mon")){
         window.localStorage.setItem("theme", "dark-theme")
-    }else{
+        document.documentElement.classList.add("dark-theme")
+    } else if(e.target.parentElement.classList.contains("sun")) {
         window.localStorage.setItem("theme", "light-theme")
+        document.documentElement.classList.remove("dark-theme")
+    } else if (e.target.classList.contains("mon")){
+        window.localStorage.setItem("theme", "dark-theme")
+        document.documentElement.classList.add("dark-theme")
+    } else if(e.target.classList.contains("sun")) {
+        window.localStorage.setItem("theme", "light-theme")
+        document.documentElement.classList.remove("dark-theme")
     }
 })
 

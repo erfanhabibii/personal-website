@@ -1130,9 +1130,30 @@ textarea{
     margin: 0.2rem;
     color: var(--primary-bg-color);
     cursor: pointer;
+    display: block;
 }
 .dark-light__svg--active{
     color: var(--primary-color);
+}
+/* 
+==================
+    Overlay    
+==================
+*/
+.overlay{
+    visibility: hidden;
+    position: fixed;
+    inset: 0px;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 0.4);
+    opacity: 0;
+    transition: all 250ms ease-in;
+}
+.overlay--visible {
+    visibility: visible;
+    opacity: 1;
 }
 /* 
 ==================
@@ -1290,6 +1311,7 @@ textarea{
     }
     .nav__menu--open{
         height: 392px;
+        z-index: 20;
     }
     .nav__toggle{
         display: flex;
