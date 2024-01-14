@@ -43,9 +43,9 @@ navigationTabs = (listItems, listItemsActiveClass, contentItemShowClass) => {
         })
     });
 }
-removeActiveClass = (className) => {
-    document.querySelector(`.${className}`).classList.remove(className)
-}
+
+removeActiveClass = className => document.querySelector(`.${className}`).classList.remove(className)
+
 navigationTheme = (listItems, listItemsActiveClass) => {
     listItems.forEach(listItem => {
         listItem.addEventListener('click', function () {
@@ -90,15 +90,13 @@ changeTheme.addEventListener("click", function(e) {
 })
 
 // Loops
-sections.forEach(section =>{
-    observer.observe(section)
-})
-menuItem.forEach(item =>{
+sections.forEach( section => observer.observe(section) )
+
+menuItem.forEach(item => {
     item.addEventListener("click", function(e){
         e.preventDefault()
         removeActiveClass("nav__menu-item--active")
         item.classList.add("nav__menu-item--active")
-
         let sectionClass = item.getAttribute("data-section")
         let sectionOffSet = document.querySelector(`.${sectionClass}`).offsetTop
         window.scrollTo({
