@@ -1135,6 +1135,10 @@ textarea{
 .dark-light__svg--active{
     color: var(--primary-color);
 }
+.novazen{
+    color: #48654B;
+    font-weight: 600;
+}
 /* 
 ==================
     Overlay    
