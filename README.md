@@ -4,7 +4,7 @@ Example of personal website template implementation with  <img src="https://img.
 <br/>
 
 ## Demo
-[https://erfanhabibii.github.io/personalwebsite](https://erfanhabibii.github.io/personalWebsite/)
+[https://erfanhabibii.github.io/personal-website/](https://erfanhabibii.github.io/personal-website/)
 
 <br/>
 
